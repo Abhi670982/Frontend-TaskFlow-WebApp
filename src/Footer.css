@@ -1,0 +1,146 @@
+/* ===========================
+      FOOTER MAIN WRAPPER
+=========================== */
+.tf-footer {
+  width: 100%;
+  background: linear-gradient(135deg, #2e2558, #1f1942);
+  padding: 60px 90px 20px;
+  color: white;
+  position: relative;
+  z-index: 2;
+  margin-top: 60px;
+}
+
+/* ===========================
+      GRID LAYOUT
+=========================== */
+.tf-footer-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+}
+
+/* ===========================
+      COLUMN TITLES
+=========================== */
+.tf-footer-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.tf-footer-heading::after {
+  content: "";
+  width: 40px;
+  height: 3px;
+  background: #cf5bff;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  border-radius: 3px;
+}
+
+/* ===========================
+      BRAND SECTION
+=========================== */
+.brand .tf-footer-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.tf-footer-text {
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+/* ===========================
+      LINKS & SERVICES
+=========================== */
+.tf-footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tf-footer-col ul li {
+  margin: 10px 0;
+  opacity: 0.9;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.tf-footer-col ul li a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.9;
+  transition: 0.3s;
+}
+
+.tf-footer-col ul li:hover,
+.tf-footer-col ul li a:hover {
+  opacity: 1;
+  color: #cf5bff;
+}
+
+/* ===========================
+      CONTACT INFO
+=========================== */
+.tf-footer-email,
+.tf-footer-location {
+  margin: 10px 0;
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+/* ===========================
+      BOTTOM COPYRIGHT
+=========================== */
+.tf-footer-bottom {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.tf-footer-bottom hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 18px;
+}
+
+.tf-footer-bottom p {
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+/* ===========================
+      RESPONSIVE DESIGN
+=========================== */
+@media (max-width: 1024px) {
+  .tf-footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .tf-footer-content {
+    grid-template-columns: 1fr;
+    gap: 1px; 
+  }
+  .tf-footer-content li{
+    font-size: 15px;
+  }
+  .tf-footer {
+    padding: 50px 30px 20px;
+  }
+  .brand .tf-footer-title {
+    font-size: 1.6rem;
+  }
+}
+
+.tf-footer-bottom p{
+  margin-right: 50px;
+  font-size: 15px;
+  font-style:normal;
+}
+
+

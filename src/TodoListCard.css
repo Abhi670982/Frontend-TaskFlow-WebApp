@@ -1,0 +1,239 @@
+/* =============================
+   MAIN CARD CONTAINER
+============================= */
+.todolist {
+  height: 80vh;
+  width: 380px;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  background: #2d3748;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  margin: auto;
+  margin-top: 50px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  margin-right: -18px;
+
+  /* ✅ Added same animation as other cards */
+  animation: fadeUp 0.6s ease;
+}
+
+.todolist:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(107, 99, 255, 0.25);
+}
+
+/* =============================
+   HEADER SECTION
+============================= */
+.todolist nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  background: #4a5568;
+  padding: 14px 18px;
+  border-bottom: 1.5px solid #2d3748;
+  margin: 15px 15px;
+  border-radius: 12px;
+  margin-top: 27px;
+  margin-left: 18px;
+  margin-right: 18px;
+  height: 75px;
+
+  /* ✅ Smooth text fade for header content */
+  animation: fadeUp 0.8s ease;
+}
+
+.todolist img {
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.todolist img:hover {
+  transform: scale(1.05);
+}
+
+.todolist nav h3 {
+  font-size: 1.3rem;
+  color: #333;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  background: linear-gradient(90deg, #5148ff, #6b63ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeUp 1s ease; /* ✅ Subtle fade for text */
+}
+
+/* =============================
+   TASK LIST AREA
+============================= */
+.task-list {
+  flex-grow: 1;
+  padding: 15px;
+  overflow-y: auto;
+  background: transparent;
+  animation: fadeUp 0.9s ease; /* ✅ smooth entry for list */
+}
+
+/* Scrollbar */
+.task-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.task-list::-webkit-scrollbar-thumb {
+  background-color: #4a5568;
+  border-radius: 10px;
+}
+
+.task-list::-webkit-scrollbar-track {
+  background-color: #2d3748;
+}
+
+/* =============================
+   EACH TASK ITEM
+============================= */
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #4a5568;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  box-shadow: none;
+  animation: fadeUp 0.8s ease; /* ✅ changed from fadeIn */
+}
+
+.task-item:hover {
+  background: #5a6578;
+  transform: translateY(-2px);
+}
+
+/* =============================
+   ADD TASK SECTION
+============================= */
+.add-task {
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  border-top: 1.5px solid #2d3748;
+  background: #4a5568;
+  box-shadow: none;
+  position: sticky;
+  bottom: 0;
+  animation: fadeUp 1s ease;
+}
+.add-task input{
+  width: 280px;
+  height: 30px;
+}
+
+/* =============================
+   BUTTON
+============================= */
+.add-task button {
+  margin-left: 10px;
+  background: linear-gradient(135deg, #6b63ff, #817dfa);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(107, 99, 255, 0.3);
+  font-weight: 500;
+}
+
+.add-task button:hover {
+  background: linear-gradient(135deg, #5148ff, #6b63ff);
+  transform: scale(1.05);
+}
+
+/* =============================
+   UNIFIED ANIMATION
+============================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+ /* ================================================================ */
+
+ @media(max-width: 600px){
+  .todolist {
+    width: 100%; /* Full width for mobile view */
+    height: 65vh;
+    margin: 0px;
+    border-radius: 18px; /* Consistent rounding */
+    box-shadow: none;
+  }
+
+  .todolist nav {
+    height: auto;
+    padding: 12px 15px;
+    margin: 0;
+    border-radius: 0;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+  }
+
+  .todolist nav h3 {
+    font-size: 1.15rem;
+  }
+
+  .todolist img {
+    height: 38px;
+    width: 38px;
+  }
+
+  .task-list {
+    padding: 15px;
+  }
+
+  .task-item {
+    width: auto;
+    height: auto;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+  }
+
+  .task-item span {
+    margin-left: 0;
+    word-break: break-word;
+  }
+
+  .task-item button {
+    margin-right: 0;
+  }
+
+  .add-task {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .add-task input {
+    flex-grow: 1; /* Allow input to take available space */
+    width: auto;
+    height: 38px; /* Taller input */
+    padding: 0 12px;
+  }
+
+  .add-task button {
+    height: 38px;
+    width: auto;
+    padding: 0 18px;
+    flex-shrink: 0; /* Prevent button from shrinking */
+  }
+ }

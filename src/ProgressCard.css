@@ -1,0 +1,237 @@
+/* =============================
+   MAIN CARD STYLING
+============================= */
+.card3 {
+  height: 71vh;
+  width: 337px;
+  background: #2d3748;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 28px 24px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 30px auto;
+  border: none;
+  animation: fadeUp 0.6s ease;
+  margin-top: 50px;
+  margin-left: -102px;
+  cursor: pointer;
+}
+
+.card3:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(107, 99, 255, 0.25);
+}
+
+/* Hide mobile content by default */
+.mobile-view-content {
+  display: none;
+}
+
+/* =============================
+   HEADER SECTION
+============================= */
+.progress-header {
+ display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  margin-bottom: 10px;
+  background: #4a5568;
+  padding: 14px 20px;
+  border-radius: 10px;
+  box-shadow: none;
+  height: 75px;
+  width: 305px;
+  margin-left: 30px;
+}
+
+.progress-header img {
+  height: 55px;
+  width: 55px;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.progress-header img:hover {
+  transform: scale(1.08);
+}
+
+.card3 h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #5148ff, #6b63ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* =============================
+   TEXT SECTION
+============================= */
+.card3 p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  width: 90%;
+  animation: fadeUp 0.8s ease;
+  margin-top: 0px;
+  margin-left: 20px;
+}
+
+/* =============================
+   CHART SECTION
+============================= */
+.chart-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 110%;
+  margin: 10px 0;
+}
+
+/* Circle chart */
+.circle-chart {
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  height: 147px;
+  width: 152px;
+}
+
+
+.center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  margin-top: 25px;
+}
+
+/* Bar chart */
+.bar-chart {
+  width: 186px;
+  height: 126px;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  margin-right: 50px;
+}
+
+/* =============================
+   BUTTON STYLING
+============================= */
+.view-stats-btn {
+  background: linear-gradient(135deg, #6b63ff, #817dfa);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 24px;
+  width: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(107, 99, 255, 0.3);
+  margin: 4px auto;
+  height: 30px;
+
+}
+
+.view-stats-btn:hover {
+  background: linear-gradient(135deg, #5148ff, #6b63ff);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(107, 99, 255, 0.4);
+}
+
+/* =============================
+   ANIMATIONS
+============================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   MOBILE RESPONSIVE STYLES
+======================================== */
+@media (max-width: 600px) {
+  .card3 {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: none;
+  }
+
+  .card-content-wrapper {
+    width: 100%;
+  }
+
+  .progress-header {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    height: auto;
+    text-align: center;
+    background: none;
+  }
+
+  .progress-header img {
+    height: 45px;
+    width: 45px;
+  }
+
+  .card3 h3 {
+    font-size: 1.25rem;
+  }
+
+  .card3 p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+
+  .chart-section {
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .circle-chart {
+    height: 140px;
+    width: 140px;
+  }
+
+  .bar-chart {
+    width: 100%;
+    max-width: 280px; /* Prevent bar chart from becoming too wide */
+  }
+
+  .view-stats-btn {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1.05rem;
+  }
+}

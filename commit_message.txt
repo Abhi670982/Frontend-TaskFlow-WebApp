@@ -1,0 +1,1 @@
+temp: Add visibility test element to ProgressPage.jsx

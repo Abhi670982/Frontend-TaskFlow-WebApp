@@ -1,0 +1,19 @@
+.productivity-insights {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 1.5rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.productivity-insights h3 {
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.productivity-insights p {
+  font-size: 1rem;
+  color: #a0aec0;
+}

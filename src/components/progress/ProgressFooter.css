@@ -1,0 +1,156 @@
+/* ========================================
+   PROGRESS FOOTER CONTAINER
+======================================== */
+.progress-footer {
+  width: 100%;
+  padding: 50px 5%;
+  background: linear-gradient(135deg, #2a214a 0%, #3a2d63 100%);
+  color: #e0e0e0;
+  font-family: 'Poppins', sans-serif;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 10;
+  margin-top: auto; /* Pushes footer to the bottom */
+}
+
+.progress-footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+/* ========================================
+   FOOTER COLUMNS
+======================================== */
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-column h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+/* Underline effect for headings */
+.footer-column h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, #8e44ad, #c0392b);
+}
+
+.footer-column p,
+.footer-column li {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #c7c7c7;
+}
+
+.footer-column.about p {
+  max-width: 300px;
+}
+
+.footer-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+/* ========================================
+   LINKS & SERVICES LISTS
+======================================== */
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.footer-column ul li a {
+  color: #c7c7c7;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.footer-column ul li a:hover {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255, 107, 255, 0.8);
+  transform: translateX(5px);
+}
+
+/* ========================================
+   BOTTOM BAR (COPYRIGHT)
+======================================== */
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.footer-separator {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  width: 100%;
+  margin: 0 auto 20px;
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+  color: #a0a0a0;
+  margin: 0;
+}
+
+/* ========================================
+   RESPONSIVENESS
+======================================== */
+@media (max-width: 768px) {
+  .progress-footer-content {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 30px;
+  }
+
+  .progress-footer {
+    padding: 40px 5%;
+  }
+
+  .footer-column h4 {
+    font-size: 1rem;
+  }
+
+  .footer-column p,
+  .footer-column li {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .progress-footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-column h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .footer-column ul li a:hover {
+    transform: translateX(0);
+  }
+}

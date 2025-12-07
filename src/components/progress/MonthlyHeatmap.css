@@ -1,0 +1,32 @@
+.monthly-heatmap {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 1.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.monthly-heatmap h3 {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.heatmap-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.heatmap-cell {
+  width: 100%;
+  padding-bottom: 100%; /* Maintain aspect ratio */
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  transition: background-color 0.3s;
+}
+
+.heatmap-cell.empty {
+  background-color: transparent;
+}

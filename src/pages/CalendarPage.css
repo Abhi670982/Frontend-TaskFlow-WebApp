@@ -1,0 +1,348 @@
+/* ========================================
+   Calendar Page Wrapper
+   — Now with page entry fade + upward motion
+======================================== */
+.calendar-page-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  padding: 30px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  animation: pageFadeIn 0.9s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================================
+   Calendar Container — Small + Modern
+   — Smooth scale-in entry
+======================================== */
+.calendar-container {
+  max-width: 820px;
+  max-height: 620px;
+  width: 95%;
+  background: rgba(20, 15, 40, 0.55);
+  border: 1px solid rgba(140, 70, 255, 0.25);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 20px;
+  color: #e0e0e0;
+  box-shadow: 0 0 40px rgba(140, 70, 255, 0.15);
+
+  transform: scale(0.92);
+  opacity: 0;
+  animation: containerPopIn 0.7s ease forwards 0.2s;
+}
+
+@keyframes containerPopIn {
+  0% { transform: scale(0.92); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ========================================
+   Calendar Header — Smooth fade-up
+======================================== */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 0.6s ease forwards 0.35s;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.month-display {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.nav-btn {
+  width: 38px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  border: none;
+  color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: rgba(150, 80, 255, 0.4);
+}
+
+/* ========================================
+   Weekday Row — Subtle fade-up
+======================================== */
+.weekday-row {
+  margin-bottom: 8px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 0.6s ease forwards 0.45s;
+}
+
+.weekday-header {
+  text-align: center;
+  font-size: 0.78rem;
+  color: #bbb;
+}
+
+/* ========================================
+   Calendar Grid
+   — Individual date pop-in animation added
+======================================== */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+/* ========================================
+   Date Cells — Smaller & Clean + pop-in
+======================================== */
+.date-cell {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  padding: 6px;
+  cursor: pointer;
+  position: relative;
+  height: 58px;
+  transition: 0.3s;
+
+  opacity: 0;
+  transform: scale(0.85);
+  animation: datePop 0.4s ease forwards;
+}
+
+@keyframes datePop {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Disabled */
+.date-cell.other-month {
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+/* Date Number */
+.date-number {
+  font-size: 0.85rem;
+}
+
+/* ========================================
+   Hover
+======================================== */
+.date-cell:hover {
+  background: rgba(170, 130, 255, 0.15);
+  transform: translateY(-4px);
+}
+
+/* ========================================
+   Today
+======================================== */
+.date-cell.today {
+  background: rgba(59, 130, 246, 0.25);
+  border: 1px solid rgba(59, 130, 246, 0.6);
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
+}
+
+.date-cell.today .date-number {
+  color: #3b82f6;
+  font-weight: 700;
+}
+
+/* ========================================
+   Task Indicator
+======================================== */
+.task-indicator {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 3px;
+}
+
+.task-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+/* ========================================
+   Month Slide Animation (Already Perfect)
+======================================== */
+.slide-left {
+  animation: slideLeft 0.4s ease-out;
+}
+.slide-right {
+  animation: slideRight 0.4s ease-out;
+}
+
+@keyframes slideLeft {
+  from { transform: translateX(40px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes slideRight {
+  from { transform: translateX(-40px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* =================================================================
+   ✨ MOBILE STYLES (max-width: 600px) ✨
+================================================================= */
+@media (max-width: 600px) {
+  /* Page Wrapper: Less vertical padding */
+  .calendar-page-wrapper {
+    padding: 15px 10px;
+    align-items: flex-start; /* Align to top */
+    animation: slideUpFadeIn 0.9s ease-out forwards;
+  }
+
+  /* Calendar Container: Fit screen, lighter, less rounded */
+  .calendar-container {
+    width: 100%;
+    max-width: 410px; /* Max for larger phones */
+    padding: 15px;
+    border-radius: 16px;
+    background: rgba(25, 20, 50, 0.65); /* Lighter background */
+    box-shadow: 0 0 25px rgba(120, 60, 230, 0.1);
+    backdrop-filter: blur(15px);
+  }
+
+  /* Header: Centered month, smaller elements */
+  .calendar-header {
+    margin-bottom: 15px;
+    /* Centering the title */
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Month Title: Centered, smaller, fade-in animation */
+  .month-display {
+    font-size: 22px;
+    order: 2; /* Center element */
+    animation: fadeIn 0.8s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+
+  /* Navigation Buttons: Smaller, glow effect */
+  .nav-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .nav-btn:hover {
+    background: rgba(160, 90, 255, 0.5);
+    box-shadow: 0 0 12px rgba(160, 90, 255, 0.5);
+  }
+
+  /* Reposition nav buttons */
+  .calendar-header {
+    position: relative;
+    padding: 0 45px; /* Space for buttons */
+  }
+  .nav-btn:first-child {
+    order: 1;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .nav-btn:last-child {
+    order: 3;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* Weekday Header: Smaller text */
+  .weekday-header {
+    font-size: 0.7rem;
+  }
+  .weekday-row {
+    margin-bottom: 6px;
+  }
+
+  /* Grid: Tighter spacing */
+  .calendar-grid {
+    gap: 5px;
+  }
+
+  /* Date Cells: Smaller, smoother hover */
+  .date-cell {
+    height: 45px;
+    border-radius: 8px;
+    padding: 4px;
+    transition: transform 0.25s, background-color 0.25s, box-shadow 0.25s;
+  }
+
+  .date-cell:hover {
+    transform: translateY(-2px);
+    background: rgba(170, 130, 255, 0.2);
+  }
+
+  /* Selected Date: Glowing border */
+  .date-cell.selected {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
+    border: 1px solid rgba(59, 130, 246, 0.8);
+  }
+
+  .date-number {
+    font-size: 0.8rem;
+  }
+
+  /* Task Indicator: Smaller dots */
+  .task-dot {
+    width: 4px;
+    height: 4px;
+  }
+
+  /* --- Background Animations --- */
+  /* Scale down floating elements */
+  .glow, .square {
+    transform: scale(0.6);
+  }
+
+  /* Reduce blur on mobile */
+  .glow.g1 { filter: blur(60px); }
+  .glow.g2 { filter: blur(70px); }
+  .glow.g3 { filter: blur(50px); }
+  .glow.g4 { filter: blur(80px); }
+
+  /* Slide-up animation for the page */
+  @keyframes slideUpFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

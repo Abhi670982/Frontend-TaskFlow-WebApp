@@ -1,0 +1,194 @@
+/* =============================
+   MAIN CARD STYLING
+============================= */
+.card2 {
+ height: 72vh;
+  width: 337px;
+  background: #2d3748;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 25px 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 30px auto;
+  border: none;
+  animation: fadeUp 0.6s ease;
+  margin-top: 50px;
+  margin-left: 2px;
+  cursor: pointer;
+}
+
+
+.card2:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(107, 99, 255, 0.25);
+}
+
+/* Hide mobile content by default */
+.mobile-view-content {
+  display: none;
+}
+
+/* =============================
+   HEADER SECTION
+============================= */
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: #4a5568;
+  padding: 14px 20px;
+  border-radius: 10px;
+  box-shadow: none;
+  margin-bottom: 5px;
+  height: 75px;
+}
+
+.card-icon {
+  height: 55px;
+  width: 55px;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card-icon:hover {
+  transform: scale(1.08);
+}
+
+.card-header h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  letter-spacing: 0.3px;
+  background: linear-gradient(90deg, #5148ff, #6b63ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* =============================
+   DESCRIPTION TEXT
+============================= */
+.card-description {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  width: 90%;
+  animation: fadeUp 0.8s ease;
+  margin-top: 0px;
+}
+
+/* =============================
+   IMAGE PREVIEW
+============================= */
+.calendar-preview {
+  width: 322px;
+  height: 167px;
+  border-radius: 12px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
+  margin-bottom: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+}
+
+.calendar-preview:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 25px rgba(107, 99, 255, 0.4);
+}
+
+/* =============================
+   BUTTON STYLING
+============================= */
+.view-btn {
+  height: 30px;
+  width: 120px;
+  background: linear-gradient(135deg, #6b63ff, #817dfa);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(107, 99, 255, 0.3);
+  font-weight: 500;
+}
+
+.view-btn:hover {
+  background: linear-gradient(135deg, #5148ff, #6b63ff);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(107, 99, 255, 0.4);
+}
+
+/* =============================
+   ANIMATIONS
+============================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   MOBILE RESPONSIVE STYLES
+======================================== */
+@media (max-width: 600px) {
+  .card2 {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: none;
+  }
+
+  .card-content-wrapper {
+    width: 100%;
+  }
+
+  .card-header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    height: auto;
+    text-align: center;
+    background: none;
+  }
+
+  .card-icon {
+    height: 45px;
+    width: 45px;
+  }
+
+  .card-header h3 {
+    font-size: 1.25rem;
+  }
+
+  .card-description {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+
+  .calendar-preview {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .view-btn {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1.05rem;
+  }
+}

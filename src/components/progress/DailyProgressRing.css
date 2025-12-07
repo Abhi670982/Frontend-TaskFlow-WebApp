@@ -1,0 +1,53 @@
+.daily-progress-ring {
+  position: relative;
+  width: 120px; /* 2 * radius */
+  height: 120px; /* 2 * radius */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.daily-progress-ring svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg); /* Start from top */
+}
+
+.daily-progress-ring circle {
+  transition: stroke-dashoffset 0.5s ease-in-out; /* Smooth animation for the ring */
+}
+
+.daily-progress-ring .progress-circle {
+  stroke-linecap: round; /* Rounded ends for the progress bar */
+}
+
+.daily-progress-ring .percentage {
+  position: relative;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(107, 99, 255, 0.7); /* Neon glow */
+  z-index: 1;
+}
+
+/* Pop-in animation */
+.daily-progress-ring.pop-in .percentage {
+  animation: popInScale 0.5s ease-out forwards;
+}
+
+@keyframes popInScale {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

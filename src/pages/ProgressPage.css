@@ -1,0 +1,268 @@
+
+/* ========================================
+   PROGRESS PAGE LAYOUT & THEME
+======================================== */
+.progress-page-layout {
+  padding: 40px 20px 80px; /* Add bottom padding for footer */
+  animation: page-fade-in 0.6s ease-out forwards;
+}
+
+@keyframes page-fade-in {
+  from { opacity: 0; transform: scale(0.99); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.progress-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1rem;
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.grid-item {
+  background: linear-gradient(145deg, rgba(46, 36, 88, 0.7), rgba(58, 45, 99, 0.5));
+  padding: 1.5rem 2rem;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(18, 15, 38, 0.37);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px 0 rgba(18, 15, 38, 0.5);
+  border-color: rgba(198, 167, 255, 0.3);
+}
+
+.grid-item-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Specific grid item layouts */
+.daily-progress {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 2rem;
+}
+
+.weekly-analysis { grid-column: span 2; }
+.monthly-heatmap { grid-column: span 1; }
+.achievements { grid-column: span 1; }
+.monthly-summary { grid-column: span 1; }
+.productivity-insights { grid-column: span 2; }
+.motivational-quotes { grid-column: span 1; }
+
+.no-data-fallback {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a0aec0;
+  font-size: 0.9rem;
+  min-height: 100px;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* ========================================
+   BACKGROUND ANIMATIONS
+======================================== */
+.progress-page-animations .square,
+.progress-page-animations .glow {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+}
+.s15 { top: 12%; left: 5%; --move-speed: 70s; animation-name: sqPath1; }
+.s16 { top: 80%; left: 20%; --move-speed: 75s; animation-name: sqPath2; }
+.s17 { top: 50%; left: 90%; --move-speed: 80s; animation-name: sqPath3; }
+.s18 { top: 30%; left: 60%; --move-speed: 72s; animation-name: sqPath4; }
+.s19 { top: 90%; left: 70%; --move-speed: 78s; animation-name: sqPath5; }
+.s25 { top: 10%; left: 15%; --move-speed: 60s; animation-name: sqPath3; }
+.s26 { top: 25%; left: 85%; --move-speed: 67s; animation-name: sqPath4; }
+.s27 { top: 55%; left: 5%;  --move-speed: 74s; animation-name: sqPath5; }
+.s28 { top: 78%; left: 40%; --move-speed: 69s; animation-name: sqPath2; }
+.s29 { top: 92%; left: 10%; --move-speed: 71s; animation-name: sqPath1; }
+.s30 { top: 45%; left: 25%; --move-speed: 66s; animation-name: sqPath7; }
+.s31 { top: 5%;  left: 60%; --move-speed: 73s; animation-name: sqPath6; }
+.s32 { top: 65%; left: 80%; --move-speed: 83s; animation-name: sqPath8; }
+.s33 { top: 33%; left: 50%; --move-speed: 68s; animation-name: sqPath9; }
+.s34 { top: 12%; left: 72%; --move-speed: 75s; animation-name: sqPath10; }
+.s35 { top: 88%; left: 85%; --move-speed: 82s; animation-name: sqPath1; }
+.s36 { top: 58%; left: 33%; --move-speed: 79s; animation-name: sqPath2; }
+.s37 { top: 48%; left: 90%; --move-speed: 63s; animation-name: sqPath3; }
+.s38 { top: 18%; left: 32%; --move-speed: 86s; animation-name: sqPath4; }
+.s39 { top: 73%; left: 15%; --move-speed: 77s; animation-name: sqPath5; }
+.s40 { top: 22%; left: 45%; --move-speed: 69s; animation-name: sqPath6; }
+.s41 { top: 66%; left: 55%; --move-speed: 72s; animation-name: sqPath7; }
+.s42 { top: 84%; left: 30%; --move-speed: 80s; animation-name: sqPath8; }
+.s43 { top: 94%; left: 65%; --move-speed: 85s; animation-name: sqPath9; }
+.s44 { top: 7%;  left: 25%; --move-speed: 76s; animation-name: sqPath10; }
+
+.g9 { background: #ff6b81; top: 15%; left: 25%; animation: bubbleMove1 80s infinite alternate; }
+.g10 { background: #3498db; bottom: 10%; right: 15%; animation: bubbleMove2 85s infinite alternate; }
+.g11 { background: #f1c40f; top: 50%; left: 50%; animation: bubbleMove3 90s infinite alternate; }
+.g12 { background: #9b59b6; top: 80%; left: 5%; animation: bubbleMove4 95s infinite alternate; }
+.g13 { background: #2ecc71; bottom: 5%; left: 60%; animation: bubbleMove1 100s infinite alternate; }
+
+/* ========================================
+   RESPONSIVENESS
+======================================== */
+@media (max-width: 1200px) {
+  .daily-progress { flex-direction: column; }
+  .weekly-analysis { grid-column: span 1; }
+  .productivity-insights { grid-column: span 1; }
+}
+
+@media (max-width: 768px) {
+  .progress-grid { grid-template-columns: 1fr; width: 90%; }
+  .grid-item { padding: 1.5rem; }
+  .daily-progress { padding: 1.5rem; }
+}
+
+/* ========================================
+   MOBILE POLISH (UNDER 600px)
+======================================== */
+@media (max-width: 600px) {
+  .progress-page-layout {
+    padding: 20px 10px 80px;
+    overflow-x: hidden;
+    margin: 0px;
+  }
+
+  .progress-grid {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* Reset grid spans for single column */
+  .daily-progress,
+  .weekly-analysis,
+  .monthly-heatmap,
+  .achievements,
+  .monthly-summary,
+  .productivity-insights,
+  .motivational-quotes {
+    grid-column: 1 / -1;
+    animation: card-fade-in 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  /* Staggered fade-in animation */
+  .grid-item:nth-child(1) { animation-delay: 0.1s; }
+  .grid-item:nth-child(2) { animation-delay: 0.2s; }
+  .grid-item:nth-child(3) { animation-delay: 0.3s; }
+  .grid-item:nth-child(4) { animation-delay: 0.4s; }
+  .grid-item:nth-child(5) { animation-delay: 0.5s; }
+  .grid-item:nth-child(6) { animation-delay: 0.6s; }
+  .grid-item:nth-child(7) { animation-delay: 0.7s; }
+
+  @keyframes card-fade-in {
+    from {
+      opacity: 0;
+      transform: scale(0.98) translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  .grid-item {
+    padding: 1.25rem;
+    border-radius: 16px;
+  }
+
+  .grid-item-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  /* --- Component-Specific Adjustments --- */
+
+  .daily-progress {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 1rem;
+  }
+  
+  .task-breakdown {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+    margin-top: 0;
+  }
+
+  /* DailyProgressRing */
+  .daily-progress-ring {
+    width: 120px;
+    height: 120px;
+    margin: 0;
+  }
+  .daily-progress-ring .percentage {
+    font-size: 1.9rem;
+  }
+
+  /* WeeklyAnalysis (Bar Chart) */
+  .weekly-analysis .chart-container {
+    height: 140px;
+  }
+
+  /* MonthlyHeatmap */
+  .heatmap-grid {
+    gap: 4px;
+  }
+  .monthly-heatmap h3 { font-size: 1.2rem; }
+
+  /* Achievements */
+  .achievements-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 0.75rem;
+  }
+  .achievement-item { padding: 0.5rem; }
+  .achievement-item .icon { font-size: 1.8rem; }
+  .achievement-item .title { font-size: 0.75rem; line-height: 1.3; }
+  
+  /* Typography */
+  .motivational-quotes p { font-size: 0.9rem; line-height: 1.6; }
+  .productivity-insights p { font-size: 0.85rem; line-height: 1.6; }
+  .summary-item .category-name { font-size: 0.85rem; }
+  .summary-item .stats { font-size: 0.8rem; }
+  .breakdown-item .label { font-size: 0.8rem; }
+  .breakdown-item .count { font-size: 1.8rem; }
+
+  /* --- Background Animation Adjustments --- */
+  .dots { opacity: 0.2; }
+
+  .progress-page-animations .square {
+    animation-duration: calc(var(--move-speed) * 1.8);
+  }
+  .progress-page-animations .small { width: 18px; height: 18px; }
+  .progress-page-animations .medium { width: 36px; height: 36px; }
+  .progress-page-animations .large { width: 60px; height: 60px; }
+
+  .progress-page-animations .glow,
+  .app > .glow {
+    width: 180px;
+    height: 180px;
+  }
+}

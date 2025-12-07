@@ -1,0 +1,232 @@
+/* ============================================
+   FULL PAGE WRAPPER + ANIMATIONS
+============================================ */
+.login-wrapper {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top left, #1b152f, #0a0914);
+}
+
+/* Glow Bubbles */
+.glow {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  opacity: 0.45;
+  filter: blur(140px);
+  animation: floatGlow 18s infinite alternate ease-in-out;
+}
+.g1 { background: #6b63ff; top: 5%; left: 10%; }
+.g2 { background: #d66bff; bottom: 10%; right: 15%; }
+.g3 { background: #4adede; top: 50%; left: 50%; }
+.g4 { background: #ff8aa7; bottom: 5%; left: 10%; }
+.g5 { background: #a066ff; top: 20%; right: 8%; }
+
+@keyframes floatGlow {
+  from { transform: translateY(0px); }
+  to   { transform: translateY(-50px); }
+}
+
+/* ========================================
+   FLOATING & ROTATING SQUARES — PERFECTLY SMOOTH
+======================================== */
+.square {
+  position: absolute;
+  border-radius: 6px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  opacity: 0.4;
+  z-index: 0;
+  will-change: transform;
+  animation: sqFloat var(--move-speed, 60s) infinite ease-in-out;
+}
+
+/* Square sizes for depth */
+.small  { width: 45px; height: 45px; }
+.medium { width: 80px; height: 80px; }
+.large  { width: 120px; height: 120px; }
+
+/* ========================================
+   SQUARE POSITIONS + UNIQUE SPEEDS
+======================================== */
+.s1  { top: 10%; left: 15%; --move-speed: 55s; --dir: sqPath1; }
+.s2  { top: 25%; left: 70%; --move-speed: 60s; --dir: sqPath2; }
+.s3  { top: 70%; left: 8%;  --move-speed: 65s; --dir: sqPath3; }
+.s4  { top: 35%; left: 42%; --move-speed: 58s; --dir: sqPath4; }
+.s5  { top: 85%; left: 55%; --move-speed: 62s; --dir: sqPath5; }
+.s6  { top: 5%;  left: 80%; --move-speed: 67s; --dir: sqPath6; }
+.s7  { top: 45%; left: 18%; --move-speed: 53s; --dir: sqPath7; }
+.s8  { top: 65%; left: 75%; --move-speed: 61s; --dir: sqPath8; }
+.s9  { top: 58%; left: 30%; --move-speed: 69s; --dir: sqPath9; }
+.s10 { top: 15%; left: 50%; --move-speed: 57s; --dir: sqPath10; }
+
+/* ========================================
+   MAIN FLOATING ANIMATION WRAPPER
+======================================== */
+@keyframes sqFloat {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  10%  { transform: translate( var(--x1, 40px), var(--y1, -60px) ) rotate(36deg); }
+  20%  { transform: translate( var(--x2, 120px), var(--y2, 40px) ) rotate(72deg); }
+  30%  { transform: translate( var(--x3, 80px), var(--y3, 100px) ) rotate(108deg); }
+  40%  { transform: translate( var(--x4, -80px), var(--y4, 120px) ) rotate(144deg); }
+  50%  { transform: translate( var(--x5, -120px), var(--y5, 60px) ) rotate(180deg); }
+  60%  { transform: translate( var(--x6, -100px), var(--y6, -80px) ) rotate(216deg); }
+  70%  { transform: translate( var(--x7, 60px), var(--y7, -100px) ) rotate(252deg); }
+  80%  { transform: translate( var(--x8, 120px), var(--y8, -60px) ) rotate(288deg); }
+  90%  { transform: translate( var(--x9, 80px), var(--y9, 60px) ) rotate(324deg); }
+  100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+/* ========================================
+   UNIQUE PATH VARIANTS FOR EACH SQUARE
+======================================== */
+@keyframes sqPath1 { 0%{transform:translate(0,0) rotate(0deg);} 100%{transform:translate(100px,-80px) rotate(360deg);} }
+@keyframes sqPath2 { 0%{transform:translate(0,0) rotate(0deg);} 100%{transform:translate(-120px,100px) rotate(360deg);} }
+@keyframes sqPath3 { 0%{transform:translate(0,0) rotate(0deg);} 100%{transform:translate(80px,140px) rotate(360deg);} }
+@keyframes sqPath4 { 0%{transform:translate(0,0) rotate(0deg);} 100%{transform:translate(130px,-120px) rotate(360deg);} }
+@keyframes sqPath5 { 0%{transform:translate(0,0) rotate(0deg);} 100%{transform:translate(-100px,60px) rotate(360deg);} }
+@keyframes sqPath6 { 0%{transform:translate(0,0) rotate(0deg);} 100%{transform:translate(0,-160px) rotate(360deg);} }
+@keyframes sqPath7 { 0%{transform:translate(0,0) rotate(0deg);} 100%{transform:translate(100px,100px) rotate(360deg);} }
+@keyframes sqPath8 { 0%{transform:translate(0,0) rotate(0deg);} 100%{transform:translate(-150px,-100px) rotate(360deg);} }
+@keyframes sqPath9 { 0%{transform:translate(0,0) rotate(0deg);} 100%{transform:translate(120px,-80px) rotate(360deg);} }
+@keyframes sqPath10{ 0%{transform:translate(0,0) rotate(0deg);} 100%{transform:translate(-140px,100px) rotate(360deg);} }
+
+/* Dots Layer */
+.dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 18px 18px;
+  opacity: 0.15;
+}
+
+/* ============================================
+   LOGIN FORM (Glassmorphism + Neon)
+============================================ */
+.login-form {
+  width: 380px;
+  padding: 35px;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.2);
+
+  box-shadow: 0 0 22px rgba(123, 74, 255, 0.3);
+
+  position: relative;
+  z-index: 50;
+
+  animation: formPop 0.7s ease-out forwards;
+  transform: scale(0.9);
+  opacity: 0;
+}
+
+@keyframes formPop {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.form-title {
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+/* Input Fields */
+.login-form input {
+  width: 100%;
+  margin: 12px 0;
+  padding: 12px 14px;
+
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.05);
+  color: white;
+
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.login-form input:focus {
+  border-color: #9f7bff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  margin-top: 18px;
+  padding: 12px 0;
+
+  border: none;
+  border-radius: 10px;
+
+  background: linear-gradient(135deg, #6b63ff, #d66bff);
+  color: white;
+
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(140, 70, 255, 0.6);
+}
+
+/* Hide back arrow on desktop */
+.login-back-arrow {
+  display: none;
+}
+
+
+/* ============================================
+   MOBILE STYLES (≤600px)
+============================================ */
+@media (max-width: 600px) {
+  /* Back Arrow */
+  .login-back-arrow {
+    display: block;
+    position: absolute;
+    top: 28px;
+    left: 25px;
+    width: 14px;
+    height: 14px;
+    border-left: 2.5px solid #e2e2e2;
+    border-bottom: 2.5px solid #e2e2e2;
+    transform: rotate(45deg);
+    cursor: pointer;
+    z-index: 100;
+  }
+
+  /* Smaller form */
+  .login-form {
+    width: 90%;
+    padding: 25px;
+  }
+
+  /* Smaller glow/blur effects */
+  .glow {
+    width: 150px;
+    height: 150px;
+    filter: blur(100px);
+  }
+
+  /* Smaller squares */
+  .square.small { width: 25px; height: 25px; }
+  .square.medium { width: 40px; height: 40px; }
+  .square.large { width: 60px; height: 60px; }
+}

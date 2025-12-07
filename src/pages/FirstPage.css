@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;500&display=swap');
+
+
+.hero{
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+  height: 70vh;  
+}
+.hero h1{
+  font-size: 50px;
+  font-style: italic;
+  color: white;
+font-family: 'Playfair Display', serif;
+}
+.hero p{
+  font-size: 20px;
+  margin: 0;
+ margin-left: 40px;
+ font-style: italic;
+ color: white;
+ font-family: 'Lato', sans-serif;
+}
+
+
+.hero button {
+  margin-top: 50px;
+  height: 45px;
+  width: 240px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #6b63ff, #c05fff);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 12px rgba(192, 95, 255, 0.4);
+  letter-spacing: 0.5px;
+}
+
+/* Hover effect — smooth glow + slight lift */
+.hero button:hover {
+  background: linear-gradient(135deg, #7b4bff, #ff7adf);
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(192, 95, 255, 0.6),
+              0 0 35px rgba(107, 99, 255, 0.4);
+}
+
+/* Active click effect */
+.hero button:active {
+  transform: translateY(1px) scale(0.97);
+  box-shadow: 0 0 10px rgba(192, 95, 255, 0.4);
+}
+
+
+.firstpage-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hero takes full space, pushes footer down */
+.hero {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+
+/* ================================
+   🔵 TABLETS (max-width: 1024px)
+================================ */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero p {
+    font-size: 18px;
+    margin-left: 20px;
+  }
+
+  .hero button {
+    width: 220px;
+    height: 42px;
+    font-size: 1rem;
+  }
+}
+
+
+/* ================================
+   🟣 LARGE PHONES (max-width: 768px)
+================================ */
+@media (max-width: 768px) {
+  .hero {
+    height: 65vh;
+    padding: 20px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero p {
+    font-size: 12px;
+    margin-left: 0;
+  }
+
+  .hero button {
+    width: 200px;
+    height: 40px;
+    font-size: 0.95rem;
+    margin-top: 30px;
+  }
+}
+
+
+/* ================================
+   🔻 SMALL PHONES (max-width: 480px)
+================================ */
+@media (max-width: 480px) {
+  .hero {
+    height: 100vh;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 12px;
+  }
+
+  .hero button {
+    width: 150px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+}
