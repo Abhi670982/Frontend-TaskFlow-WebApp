@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
+import logo from "./assets/logo.png";
 
 function Header() {
   const [open, setOpen] = useState(false);
@@ -9,7 +10,7 @@ function Header() {
     <>
       <nav className="navbar">
 
-        <img className="logo" src="/logo.png" alt="Logo" />
+        <img className="logo" src={logo} alt="Logo" />
 
         {/* Desktop Navigation */}
         <ul className="nav-links desktop-nav">

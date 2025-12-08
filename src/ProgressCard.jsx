@@ -11,6 +11,7 @@ import {
   BarElement,
 } from 'chart.js';
 import './ProgressCard.css';
+import cardThreeImage from './assets/CardThreeImage.png';
 
 ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement);
 
@@ -61,7 +62,7 @@ function ProgressCard({ onClose }) {
       )}
       <div className="card-content-wrapper">
         <nav className="progress-header">
-          <img src="./CardThreeImage.png" alt="progress icon" height="80px" />
+          <img src={cardThreeImage} alt="progress icon" height="80px" />
           <h3>Track Your Progress</h3>
         </nav>
 

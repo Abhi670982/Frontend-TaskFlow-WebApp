@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './ToDoListCard.css';
+import todolistImg from './assets/todolistimg.png';
 
 function TodoListCard({ onClose }) {
   const [tasks, setTasks] = useState([]);
@@ -26,7 +27,7 @@ function TodoListCard({ onClose }) {
         </button>
       )}
       <nav>
-        <img src="./todolistimg.png" alt="todolistimg" />
+        <img src={todolistImg} alt="todolistimg" />
         <h3>To-Do List</h3>
       </nav>
 

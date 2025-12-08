@@ -1,5 +1,7 @@
 import './CalendarCard.css';
 import { useNavigate } from "react-router-dom";
+import calendarJpg from './assets/calendar.jpg';
+import cardTwoImage from './assets/CardTwoImage.png';
 
 function CalendarCard({ onClose }) {
   const navigate = useNavigate();
@@ -23,7 +25,7 @@ function CalendarCard({ onClose }) {
       <div className="card-content-wrapper">
         
         <nav className="card-header">
-          <img src="./calendar.jpg" alt="calendar icon" className="card-icon" />
+          <img src={calendarJpg} alt="calendar icon" className="card-icon" />
           <h3>Schedule Tasks on Calendar</h3>
         </nav>
 
@@ -33,7 +35,7 @@ function CalendarCard({ onClose }) {
         </p>
 
         <img
-          src="./CardTwoImage.png"
+          src={cardTwoImage}
           alt="calendar preview"
           className="calendar-preview"
           height="100px"

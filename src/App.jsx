@@ -17,9 +17,9 @@ import TodoListPage from "./pages/TodoListPage";
 import Login from "./Login";
 
 // Asset imports for mobile buttons
-import todoIcon from "/todolistimg.png";
-import calendarIcon from "/calendar.jpg";
-import progressIcon from "/CardThreeImage.png";
+import todoIcon from "./assets/todolistimg.png";
+import calendarIcon from "./assets/calendar.jpg";
+import progressIcon from "./assets/CardThreeImage.png";
 
 // Custom hooks
 import useMediaQuery from "./hooks/useMediaQuery";
