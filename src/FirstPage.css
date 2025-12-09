@@ -114,9 +114,9 @@
 
   /* Full screen hero section */
   .hero {
-    height: 100vh;          /* FULL height */
+    height: 75vh;          /* FULL height */
     padding: 20px 10px;     /* Less padding for small screens */
-    justify-content: center;
+    justify-content: center; 
   }
 
   .hero h1 {
@@ -140,6 +140,6 @@
 
   /* Make first page container truly fullscreen */
   .firstpage-container {
-    min-height: 100vh;
+    min-height: 80vh;
   }
 }
