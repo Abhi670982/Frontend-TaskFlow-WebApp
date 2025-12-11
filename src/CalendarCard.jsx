@@ -1,7 +1,7 @@
 import './CalendarCard.css';
 import { useNavigate } from "react-router-dom";
-import calendarJpg from './assets/calendar.jpg';
-import cardTwoImage from './assets/CardTwoImage.png';
+import calendarJpg from '/assets/calendar.jpg';
+import cardTwoImage from '/assets/CardTwoImage.png';
 
 function CalendarCard({ onClose }) {
   const navigate = useNavigate();

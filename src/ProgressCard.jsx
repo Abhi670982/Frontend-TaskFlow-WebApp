@@ -11,7 +11,7 @@ import {
   BarElement,
 } from 'chart.js';
 import './ProgressCard.css';
-import cardThreeImage from './assets/CardThreeImage.png';
+import cardThreeImage from '/assets/CardThreeImage.png';
 
 ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement);
 

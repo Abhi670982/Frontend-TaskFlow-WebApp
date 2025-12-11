@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './ToDoListCard.css';
-import todolistImg from './assets/todolistimg.png';
+import todolistImg from "/assets/todolistimg.png";
 
 function TodoListCard({ onClose }) {
   const [tasks, setTasks] = useState([]);
